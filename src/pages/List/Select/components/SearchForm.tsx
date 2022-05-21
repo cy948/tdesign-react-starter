@@ -23,8 +23,8 @@ const SearchForm: React.FC<SearchFormProps> = (props) => {
     if (e.validateResult === true) {
       MessagePlugin.info('提交成功');
     }
-    const getAllFields = formRef?.current?.getAllFieldsValue;
-    const queryValue = getAllFields?.();
+    const getAllFields = formRef?.current?.getFieldsValue;
+    const queryValue = getAllFields?.(e.validateResult);
     console.log(queryValue);
   };
 
